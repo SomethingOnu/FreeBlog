@@ -36,6 +36,7 @@ html {
     font-size: 16px;
     color: var(--black1);
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 a {
     color: var(--black1);
@@ -229,6 +230,82 @@ main {
     color: var(--gray);
     background-color: var(--white2);
     background-image: repeating-linear-gradient(-45deg, var(--white1), var(--white1) 6px, transparent 0, transparent 12px);
+}
+#main > .content > .caption {
+    margin: 8px;
+    padding: 8px 24px;
+    background-color: var(--white2);
+}
+/* #main > .content > .caption > .head {
+    color: var(--gray);
+}
+#main > .content > .caption .triangle_right {
+    display: inline-block;
+    vertical-align: 0;
+    width: 0;
+    height: 0;
+    margin: 0 8px;
+    border-top: solid 6px transparent;
+    border-bottom: solid 6px transparent;
+    border-left: solid 6px var(--gray);
+} */
+#main > .content > .caption > .item-h2,
+#main > .content > .caption > .item-h3 {
+    display: block;
+    margin: 4px;
+    font-weight: 500;
+    transition: 0.25s;
+}
+#main > .content > .caption > .item-h2 {
+    font-size: 16px;
+    color: var(--black4);
+}
+#main > .content > .caption > .item-h3 {
+    font-size: 14px;
+    color: var(--gray);
+}
+#main > .content > .caption > .item-h2:before,
+#main > .content > .caption > .item-h3:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: var(--black4);
+    border-radius: 50%;
+    margin-right: 12px;
+}
+#main > .content > .caption > .item-h2:before {
+    margin-left: 0;
+}
+#main > .content > .caption > .item-h3:before {
+    margin-left: 12px;
+}
+#main > .content > .caption > .item-h2:hover,
+#main > .content > .caption > .item-h3:hover {
+    padding-left: 4px;
+    color: var(--white1);
+    background-color: var(--gray);
+    transition: 0.25s;
+}
+#main > .content > .caption > .item-h2:hover:before,
+#main > .content > .caption > .item-h3:hover:before {
+    display: inline-block;
+    vertical-align: 0;
+    width: 0;
+    height: 0;
+    margin: 0 4px 2px 0;
+    border-radius: 0;
+    border-top: solid 6px var(--white1);
+    border-left: solid 6px transparent;
+    border-right: solid 6px transparent;
+    background: transparent;
+}
+#main > .content > .caption > .item-h2:hover:before {
+    margin-left: 0;
+}
+#main > .content > .caption > .item-h3:hover:before {
+    margin-left: 12px;
 }
 #main > #sidebar {
     width: 320px;

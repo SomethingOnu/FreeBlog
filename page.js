@@ -39,7 +39,6 @@ const onLoad = async () => {
     page.appendChild(description);
     page.appendChild(categorys);
     page.appendChild(date);
-    content.prepend(page);
 
     const number_next = (Number(number) + 1).toString().padStart(4, "0");
     const number_prev = (Number(number) - 1).toString().padStart(4, "0");
@@ -73,6 +72,32 @@ const onLoad = async () => {
     menu.appendChild(page_next);
     menu.appendChild(page_list);
     menu.appendChild(page_prev);
+
+    const caption = document.createElement("div");
+    caption.className = "caption";
+
+    /* const caption_head = document.createElement("div");
+    caption_head.className = "head";
+    caption_head.innerHTML = content_data[n].title;
+    caption.appendChild(caption_head); */
+
+    const h = document.querySelectorAll("h2, h3");
+    for (let i = 0; i <= h.length - 1; i++) {
+        // const n = (i+1).toString().padStart(2, '0');
+        const caption_original = h[i];
+        caption_original.id = `caption-${i}`;
+        const caption_item = document.createElement("a");
+        switch (caption_original.localName) {
+            case "h2": caption_item.className = "item-h2"; break;
+            case "h3": caption_item.className = "item-h3"; break;
+        }
+        caption_item.href = `#caption-${i}`;
+        caption_item.innerHTML = caption_original.innerHTML;
+        caption.appendChild(caption_item);
+    }
+
+    content.prepend(caption);
+    content.prepend(page);
     content.prepend(menu);
     content.appendChild(menu.cloneNode(true));
 };
