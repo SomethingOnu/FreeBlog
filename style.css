@@ -729,6 +729,7 @@ main {
     margin: 8px;
 }
 .text > .box > .icon-title > img {
+    image-rendering: crisp-edges;
     width: 64px;
     height: 64px;
     margin-right: 8px;
